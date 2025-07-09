@@ -132,39 +132,29 @@ align-items: center;
 @media (max-width: 700px) {
   nav {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
   .logo-container {
-    margin-right: 0;
+    margin-right: 0.5em;
     margin-bottom: 0;
   }
   .logo {
-    width: 50px; height: 50px;
-  }
-  .menu-toggle {
-    display: block;
+    width: 45px; height: 45px;
   }
   .nav-links {
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: -100%; /* مخفية خارج الشاشة */
-    height: 100%;
-    width: 70%;
-    max-width: 250px;
-    background: linear-gradient(to bottom, #2e7d32, #00796b);
-    padding: 2em 1em;
-    gap: 1.2em;
-    transition: right 0.3s ease;
-    z-index: 999;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
   }
-  .nav-links.show {
-    right: 0; /* تظهر من الجانب */
+  nav a {
+    font-size: 0.9em;
+    padding: 0.3em 0.5em;
   }
+  h1 { font-size: 1.4em; }
 }
+
 
 
 </style>
@@ -177,7 +167,6 @@ align-items: center;
   <div class="logo-container">
     <img src="logo.jpg" alt="Ekalo Mode Logo" class="logo">
   </div>
-  <div class="menu-toggle" id="menuToggle">☰</div>
 
   <div class="nav-links">
     <a href="index.html">Home</a>
@@ -375,14 +364,7 @@ setInterval(updateOverlay, 1000);
 fetchTeams();
 setInterval(fetchTeams, 3000);
 </script>
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-});
-</script>
 
 </body>
 </html>
