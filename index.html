@@ -120,6 +120,30 @@ footer {
   .timer-overlay { font-size: 1.5em; }
   #overlay-time { font-size: 2em; }
 }
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    display: none; /* مخفية في البداية */
+    width: 100%;
+    background: linear-gradient(to right, #2e7d32, #00796b);
+    padding: 1em 0;
+  }
+  .nav-links.show {
+    display: flex; /* تظهر عند التفعيل */
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
 </style>
 
 
@@ -130,6 +154,8 @@ footer {
   <div class="logo-container">
     <img src="logo.jpg" alt="Ekalo Mode Logo" class="logo">
   </div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="rooms.html">Rooms</a>
@@ -323,6 +349,14 @@ setInterval(fetchSchedule, 5000);
 setInterval(updateOverlay, 1000);
 fetchTeams();
 setInterval(fetchTeams, 3000);
+</script>
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
 </script>
 
 </body>
