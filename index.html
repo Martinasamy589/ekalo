@@ -130,21 +130,42 @@ align-items: center;
 }
 
 @media (max-width: 700px) {
-  .nav-links {
+  nav {
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    display: none; /* مخفية في البداية */
-    width: 100%;
-    background: linear-gradient(to right, #2e7d32, #00796b);
-    padding: 1em 0;
   }
-  .nav-links.show {
-    display: flex; /* تظهر عند التفعيل */
+  .logo-container {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .logo {
+    width: 50px; height: 50px;
   }
   .menu-toggle {
     display: block;
   }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%; /* مخفية خارج الشاشة */
+    height: 100%;
+    width: 70%;
+    max-width: 250px;
+    background: linear-gradient(to bottom, #2e7d32, #00796b);
+    padding: 2em 1em;
+    gap: 1.2em;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  }
+  .nav-links.show {
+    right: 0; /* تظهر من الجانب */
+  }
 }
+
 
 </style>
 
