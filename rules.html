@@ -120,6 +120,63 @@ footer {
   .timer-overlay { font-size: 1.5em; }
   #overlay-time { font-size: 2em; }
 }
+@media (max-width: 700px) {
+  nav {
+   flex-direction: row;
+justify-content: space-between;
+align-items: center;
+
+  }
+  .logo-container {
+    margin-right: 0;
+    margin-bottom: 0.5em;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo {
+    width: 50px; height: 50px;
+  }
+  h1 { font-size: 1.5em; }
+  .timer-overlay { font-size: 1.5em; }
+  #overlay-time { font-size: 2em; }
+}
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .logo-container {
+    margin-right: 0.5em;
+    margin-bottom: 0;
+  }
+  .logo {
+    width: 45px; height: 45px;
+  }
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  nav a {
+    font-size: 0.9em;
+    padding: 0.3em 0.5em;
+  }
+  h1 { font-size: 1.4em; }
+}
+
+
+
 </style>
 <style>
 .rules-container {
