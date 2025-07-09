@@ -205,7 +205,7 @@ function updateOverlay() {
                 const sec = Math.floor((diffMs % 60000) / 1000);
                 overlayTime.textContent = `${min}:${sec.toString().padStart(2,'0')}`;
                 overlayActivity.textContent = `🔴 Now: ${item.name}`;
-                overlay.style.background = "#00796b";
+                overlay.style.background = "#d32f2f"; // red
                 overlay.style.color = "#ffffff";
                 if (!notifiedActivities[item.time]) {
                     if (Notification.permission === "granted") {
