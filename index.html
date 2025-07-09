@@ -67,14 +67,31 @@ h1 {
 }
 
 #teamsChartContainer {
+  position: relative;
   width: 95%;
-  max-width: 600px;
-  background: linear-gradient(135deg, #ffffff, #e0f2f1);
-  border-radius: 15px;
-  padding: 1em;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  max-width: 900px;
+  padding: 1.2em;
   margin-bottom: 2em;
+
+  background: transparent; /* شفاف فعلي */
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: none;
 }
+
+#teamsChartContainer::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 300px; height: 300px;
+  background: url('logo.jpg') center/contain no-repeat;
+  opacity: 0.3; /* ظهور خفيف جدًا للوجو */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: grayscale(100%) brightness(1.2);
+}
+
 
 footer {
   text-align: center;
@@ -310,7 +327,7 @@ const teamsChart = new Chart(ctx, {
             ],
             borderWidth: 2,
             borderRadius: 12,
-barThickness: window.innerWidth < 700 ? 20 : 40,
+barThickness: window.innerWidth < 700 ? 2 : 40,
 categoryPercentage: 0.6,
 barPercentage: 0.8,
         }]
